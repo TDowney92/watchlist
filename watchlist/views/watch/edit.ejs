@@ -42,6 +42,42 @@
         </div>
         <button class="btn btn-success col-sm-offset-2">Save</button>
     </form>
+		<br>
+		<h4> Movies </h4>
+
+			<form method="post">
+					<div class="form-group">
+							<label for="title" class="col-sm-2 control-label">Title: *</label>
+							<input name="title" id="title" required value="<%= game.title %>"/>
+					</div>
+					<div class="form-group">
+							<label for="developer" class="col-sm-2 control-label">MPAA film ratings: *</label>
+							<input name="developer" id="developer" required value="<%= game.developer %>" />
+							<select name="guide" id="guide">
+								<option<% if (game.genre == 'G') { %> selected }%>>G</option>
+								<option <% if (game.genre == 'PG') { %> selected }%>>PG</option>
+								<option <% if (game.genre == 'PG-13') { %> selected }%>PG-13</option>
+								<option <% if (game.genre == 'R') { %> selected }%>R</option>
+								<option <% if (game.genre == 'NC-17') { %> selected }%>NC-17</option>
+							</select>
+					</div>
+					<div class="form-group">
+							<label for="genre" class="col-sm-2 control-label">Genre:</label>
+							<select name="genre" id="genre">
+								<option<% if (game.genre == 'Fantasy') { %> selected }%>>Fantasy</option>
+								<option <% if (game.genre == 'Comedy') { %> selected }%>>Comedy</option>
+								<option <% if (game.genre == 'Sci-fi') { %> selected }%>Sci-fi</option>
+								<option <% if (game.genre == 'Historical') { %> selected }%>Historical</option>
+								<option <% if (game.genre == 'Adventure') { %> selected }%>Adventure</option>
+								<option <% if (game.genre == 'Romance') { %> selected }%>Romance</option>
+							</select>
+					</div>
+					<div class="form-group">
+							<label for="year" class="col-sm-2 control-label">Year of release:</label>
+							<input name="year" id="year" min="1600" type="number" required value="<%= movie.year %>"/>
+					</div>
+					<button class="btn btn-success col-sm-offset-2">Save</button>
+			</form>
 
 </main>
 
