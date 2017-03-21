@@ -1,0 +1,9 @@
+WATCHLIST Mlab stuff
+
+database name: watchlistdb
+
+username: tmed425
+
+pass: misty425
+
+Mongodb URL : mongodb://tmed425:misty425@ds137360.mlab.com:37360/watchlistdb
