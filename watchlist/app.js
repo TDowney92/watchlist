@@ -8,6 +8,11 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+// passport dependencies stuff
+let passport = require('passport');
+let sessions = require('express-session');
+let localStrategy = require('passport-local').Strategy;
+
 var app = express();
 
 // view engine setup
