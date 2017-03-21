@@ -1,0 +1,82 @@
+<% include ../partials/header.ejs %>
+
+<main class="container">
+
+  <h1>Add a Movie - TV show to the list</h1>
+
+
+
+	<h4> TV shows </h4>
+  <form method="post">
+    <div class="form-group">
+      <label for="title" class="col-sm-2 control-label">Title: *</label>
+      <input name="title" id="title" required />
+    </div>
+    <div class="form-group">
+      <label for="developer" class="col-sm-2 control-label">TV Parental Guide: *</label>
+      <input name="developer" id="developer" required />
+			<select name="guide" id="guide">
+				<option>TV-Y</option>
+				<option>TV-Y7</option>
+				<option>TV-Y7-FV</option>
+				<option>TV-G</option>
+				<option>TV-14</option>
+				<option>TV-MA</option>
+			</select>
+    </div>
+    <div class="form-group">
+      <label for="genre" class="col-sm-2 control-label">Genre:</label>
+      <select name="genre" id="genre">
+				<option>Drama</option>
+				<option>Comadey</option>
+				<option>Sci-fi</option>
+				<option>Western</option>
+				<option>Animation</option>
+				<option>History</option>
+			</select>
+    </div>
+    <div class="form-group">
+      <label for="year" class="col-sm-2 control-label">Number of seasons:</label>
+      <input name="year" id="year" min="1600" type="number" required />
+    </div>
+    <button class="btn btn-success col-sm-offset-2">Save</button>
+  </form>
+	<br>
+	<h4> Movies</h4>
+	<form method="post">
+		<div class="form-group">
+			<label for="title" class="col-sm-2 control-label">Title: *</label>
+			<input name="title" id="title" required />
+		</div>
+		<div class="form-group">
+			<label for="developer" class="col-sm-2 control-label">MPAA film ratings: *</label>
+			<input name="developer" id="developer" required />
+			<select name="filmR" id="filmR">
+				<option>G</option>
+				<option>PG</option>
+				<option>PG-13</option>
+				<option>R</option>
+				<option>NC-17</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="genre" class="col-sm-2 control-label">Genre:</label>
+			<select name="genre" id="genre">
+				<option>Fantasy</option>
+				<option>Sci-fi</option>
+				<option>Historical</option>
+				<option>Comedy</option>
+				<option>Adventure</option>
+				<option>Romance</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="year" class="col-sm-2 control-label">Year of Release:</label>
+			<input name="year" id="year" min="1600" type="number" required />
+		</div>
+		<button class="btn btn-success col-sm-offset-2">Save</button>
+	</form>
+
+</main>
+
+<% include ../partials/footer.ejs %>

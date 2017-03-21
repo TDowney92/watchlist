@@ -1,0 +1,48 @@
+<% include ../partials/header.ejs %>
+
+<main class="container">
+
+	<h1>Edit a Movie - TV show from the list</h1>
+
+
+
+	<h4> TV shows </h4>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">Title: *</label>
+            <input name="title" id="title" required value="<%= game.title %>"/>
+        </div>
+        <div class="form-group">
+            <label for="developer" class="col-sm-2 control-label">TV Parental Guide: *</label>
+            <input name="developer" id="developer" required value="<%= game.developer %>" />
+						<select name="guide" id="guide">
+							<option<% if (game.genre == 'TV-Y') { %> selected }%>>TV-Y</option>
+							<option <% if (game.genre == 'TV-Y7') { %> selected }%>>TV-Y7</option>
+							<option <% if (game.genre == 'TV-Y7-FV') { %> selected }%>TV-Y7-FV</option>
+							<option <% if (game.genre == 'TV-G') { %> selected }%>TV-G</option>
+							<option <% if (game.genre == 'TV-14') { %> selected }%>TV-14</option>
+							<option <% if (game.genre == 'TV-M') { %> selected }%>TV-M</option>
+						</select>
+        </div>
+        <div class="form-group">
+            <label for="genre" class="col-sm-2 control-label">Genre:</label>
+            <select name="genre" id="genre">
+							<option<% if (game.genre == 'Drama') { %> selected }%>>Daram</option>
+							<option <% if (game.genre == 'Comedy') { %> selected }%>>Comedy</option>
+							<option <% if (game.genre == 'Sci-fi') { %> selected }%>Sci-fi</option>
+							<option <% if (game.genre == 'Western') { %> selected }%>Western</option>
+							<option <% if (game.genre == 'Animation') { %> selected }%>Animation</option>
+							<option <% if (game.genre == 'History') { %> selected }%>History</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="year" class="col-sm-2 control-label">Number of Seasons:</label>
+            <input name="year" id="year" min="1600" type="number" required value="<%= game.year %>"/>
+        </div>
+        <button class="btn btn-success col-sm-offset-2">Save</button>
+    </form>
+
+</main>
+
+<% include ../partials/footer.ejs %>
