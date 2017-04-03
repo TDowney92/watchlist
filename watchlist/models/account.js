@@ -1,10 +1,10 @@
-let mongose = require('mongoose');
+let mongoose = require('mongoose');
 
 let plm = require('passport-local-mongoose');
-let findOrCreate = require('mongoose-findorcreate');
+let findOrCreate =  require('mongoose-findorcreate');
 
 let accountSchema = new mongoose.Schema({
-	faceboodID: String,
+	facebookID: String,
 	goodleID: String
 });
 

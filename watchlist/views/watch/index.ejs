@@ -1,5 +1,33 @@
 <% include ../partials/header.ejs %>
 
 
-
+<h1>Watch List</h1>
+<% if (user) { %>
+	<a href="/watch/add"> Add a new Show or Movie</a>
+<% } %>
+<table class="table table-striped">
+	<tr>
+		<th>Title</th>
+		<th>Rating</th>
+		<th>Genre</th>
+		<th>Year</th>
+		<% if (user) { %>
+			<th>Actions</th>
+		<% } %>
+	</tr>
+	<% for (var i = 0; i < watch.length; i++) { %>
+		<tr>
+			<td><%= watch[i].title %></td>
+			<td><%= watch[i].rating %></td>
+			<td><%= watch[i].genre %></td>
+			<td><%= watch[i].year %></td>
+			<% if (user) { %>
+				<td>
+					<a  href="/watch/edit<%= watch[i]._id %>"class="btn btn-success">Edit List</a>
+					<a href="/watch/delete/<%= watch[i]._id%>"class="btn btn-warning confirmation">Delete Media</a>
+				</td>
+			<% } %>
+		</tr>
+	<% } %>
+</table>
 <% include ../partials/footer.ejs %>
