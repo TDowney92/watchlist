@@ -47,7 +47,7 @@ router.post('/add', isLoggedIn, function(req, res, next) {
 	Watch.create({
 		title: req.body.title,
 		genre: req.body.genre,
-		seasons: req.body.year,
+		seasons: req.body.seasons,
 		rating: req.body.rating
 	},function(err) {
 		if (err) {
@@ -98,7 +98,7 @@ router.post('/:_id', isLoggedIn, function(req, res, next) {
 		_id: req.params._id,
 		title: req.body.title,
 		genre: req.body.genre,
-		year: req.body.year,
+		seasons: req.body.seasons,
 		rating: req.body.rating
 	});
 

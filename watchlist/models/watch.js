@@ -18,7 +18,7 @@ let watchSchema = new mongoose.Schema({
     },
     rating: {
         type: String,
-        required: 'Show-Movie rating is required'
+        required: 'Show rating is required'
     }
 });
 

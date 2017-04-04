@@ -2,32 +2,34 @@
 
 
 <h1>You're personal Watch List</h1>
-<% if (user) { %>
-	<a href="/watchs/add"> Add a new Show or Movie</a>
-<% } %>
-<table class="table table-striped">
-	<tr>
-		<th>Title</th>
-		<th>Rating</th>
-		<th>Genre</th>
-		<th>Year</th>
-		<% if (user) { %>
-			<th>Actions</th>
-		<% } %>
-	</tr>
-	<% for (var i = 0; i < watchs.length; i++) { %>
+<div class="container" id="table">
+	<% if (user) { %>
+		<a href="/watchs/add"> Add a new Show </a>
+	<% } %>
+	<table class="table table-striped">
 		<tr>
-			<td><%= watch[i].title %></td>
-			<td><%= watch[i].rating %></td>
-			<td><%= watch[i].genre %></td>
-			<td><%= watch[i].year %></td>
+			<th>Title</th>
+			<th>Rating</th>
+			<th>Genre</th>
+			<th>Year</th>
 			<% if (user) { %>
-				<td>
-					<a  href="/watchs/edit<%= watchs[i]._id %>"class="btn btn-success">Edit List</a>
-					<a href="/watchs/delete/<%= watchs[i]._id%>"class="btn btn-warning confirmation">Delete Media</a>
-				</td>
+				<th>Actions</th>
 			<% } %>
 		</tr>
-	<% } %>
-</table>
+		<% for (var i = 0; i < watchs.length; i++) { %>
+			<tr>
+				<td><%= watchs[i].title %></td>
+				<td><%= watchs[i].rating %></td>
+				<td><%= watchs[i].genre %></td>
+				<td><%= watchs[i].seasons %></td>
+				<% if (user) { %>
+					<td>
+						<a  href="/watchs/edit<%= watchs[i]._id %>"class="btn btn-success">Edit List</a>
+						<a href="/watchs/delete/<%= watchs[i]._id%>"class="btn btn-warning confirmation">Delete Media</a>
+					</td>
+				<% } %>
+			</tr>
+		<% } %>
+	</table>
+</div>
 <% include ../partials/footer.ejs %>
