@@ -7,13 +7,13 @@ var bodyParser = require('body-parser');
 
 // passport dependencies stuff
 let passport = require('passport');
-let sessions = require('express-session');
+let session = require('express-session');
 let localStrategy = require('passport-local').Strategy;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 // add new controllers to router
-var watch = require('./routes/watchs');
+var watchs = require('./routes/watchs');
 
 var app = express();
 
@@ -59,7 +59,7 @@ passport.deserializeUser(Account.deserializeUser());
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/watch', watchs)
+app.use('/watchs', watchs)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -67,7 +67,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
+//
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

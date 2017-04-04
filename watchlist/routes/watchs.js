@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 
 // refrence watch for CRUD
-let Watch = require('../modles/watch');
+let Watch = require('../models/watch');
 
 //authentication
 let passport = require('passport');
@@ -47,12 +47,12 @@ router.post('/add', isLoggedIn, function(req, res, next) {
 	Watch.create({
 		title: req.body.title,
 		genre: req.body.genre,
-		year: req.body.year,
+		seasons: req.body.year,
 		rating: req.body.rating
 	},function(err) {
 		if (err) {
 			console.log(err);
-			res.rendr('error');
+			res.render('error');
 			return;
 		}
 		// no errors = updated watch list
@@ -61,7 +61,7 @@ router.post('/add', isLoggedIn, function(req, res, next) {
 });
 
 // GET watch/deletd_id delte the selected show/movie
-router.get('/delete/:_id' isLoggedIn, function(req, res, next) {
+router.get('/delete/:_id', isLoggedIn, function(req, res, next) {
 	// deleted media and redirect
 	Watch.remove({_id: req.params._id }, function(err) {
 		if(err) {
@@ -85,7 +85,7 @@ router.get('/delete/:_id', isLoggedIn, function(req, res, next) {
 		}
 		res.render('watchs/edit', {
 			watch: watch,
-			title: 'Edit the Watch List'
+			title: 'Edit the Watch List',
 				user: req.user
 		});
 	});

@@ -13,8 +13,17 @@
 		<ul class="nav navbar-nav">
 			<li><a href="/">Watchlist</a></li>
 			<li><a href="/games">You're Watchlist</a></li>
+
+			<% if (user == undefined) { %>
 			<li><a href="/register">Register</a></li>
 			<li><a href="/login">Login</a></li>
+		</ul>
+		<% }
+		else { %>
 			<li><a href="/logout">Logout</a></li>
 		</ul>
+		<div class="navbar-text pull-right">
+			<%= user.username %>
+		</div>
+	<% } %>
 	</nav>

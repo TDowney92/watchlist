@@ -2,23 +2,24 @@
 let mongoose = require('mongoose');
 
 let watchSchema = new mongoose.Schema({
-	title: {
-		type: String,
-		required: 'Title is Required'
-	},
-	rating: {
-		type: String,
-		required: 'Show-Movie rating is required'
-	},
-	genre: {
-		title: String,
-		required: 'Genre is Required'
-	},
-	year: {
-		type: Number,
-		required: 'Year is Required',
-		min: 1900
-	}
+
+    title: {
+        type: String,
+        required: 'Title is Required'
+    },
+    genre: {
+        type: String,
+        required: 'Genre is Required'
+    },
+    seasons: {
+        type: Number,
+        required: 'Seasons is Required',
+        min: 1
+    },
+    rating: {
+        type: String,
+        required: 'Show-Movie rating is required'
+    }
 });
 
 // make this modle public
