@@ -26,7 +26,7 @@ router.get('/register', function(req, res, next) {
 router.get('/login', function(req, res, next) {
 
     // create a variable to store any login message
-    let messages = req.sessions.messages || [];
+    let messages = req.session.messages || [];
 
     // clear the session messages
     req.session.messages = [];

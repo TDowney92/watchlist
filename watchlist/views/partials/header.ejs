@@ -11,10 +11,19 @@
 <body>
 	<nav class="navbar navbar-inverse">
 		<ul class="nav navbar-nav">
-			<li><a href="/">The Watchlist</a></li>
+			<li><a href="#">The Watchlist</a></li>
 			<li><a href="/games">Watchlist</a></li>
+
+			<% if (user == undefined) { %>
 			<li><a href="/register">Register</a></li>
 			<li><a href="/login">Login</a></li>
+		</ul>
+		<% }
+		else { %>
 			<li><a href="/logout">Logout</a></li>
 		</ul>
+		<div class="navbar-text pull-right">
+			<%= user.username %>
+		</div>
+	<% } %>
 	</nav>
