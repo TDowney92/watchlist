@@ -47,7 +47,7 @@ router.post('/add', isLoggedIn, function(req, res, next) {
 	Watch.create({
 		title: req.body.title,
 		genre: req.body.genre,
-		year: req.body.year
+		year: req.body.year,
 		rating: req.body.rating
 	},function(err) {
 		if (err) {
@@ -61,7 +61,7 @@ router.post('/add', isLoggedIn, function(req, res, next) {
 });
 
 // GET watch/deletd_id delte the selected show/movie
-router.get('/deleted/:_id' isLoggedIn, function(req, res, next) {
+router.get('/delete/:_id' isLoggedIn, function(req, res, next) {
 	// deleted media and redirect
 	Watch.remove({_id: req.params._id }, function(err) {
 		if(err) {
@@ -75,7 +75,7 @@ router.get('/deleted/:_id' isLoggedIn, function(req, res, next) {
 });
 
 // GET watch _id - show edited form
-router.get('/:id', isLoggedIn, function(req, res, next) {
+router.get('/delete/:_id', isLoggedIn, function(req, res, next) {
 	// look up the selected media
 	Watch.findById(req.params._id, function(err, watch) {
 		if (err) {

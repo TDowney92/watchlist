@@ -11,11 +11,11 @@
     <form method="post">
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Title: *</label>
-            <input name="title" id="title" required value="<%= game.title %>"/>
+            <input name="title" id="title" required value="<%= watch.title %>"/>
         </div>
         <div class="form-group">
             <label for="developer" class="col-sm-2 control-label">TV Parental Guide: *</label>
-            <input name="developer" id="developer" required value="<%= game.developer %>" />
+            <input name="developer" id="developer" required value="<%= watch.developer %>" />
 						<select name="guide" id="guide">
 							<option<% if (game.genre == 'TV-Y') { %> selected }%>>TV-Y</option>
 							<option <% if (game.genre == 'TV-Y7') { %> selected }%>>TV-Y7</option>
@@ -38,7 +38,7 @@
         </div>
         <div class="form-group">
             <label for="year" class="col-sm-2 control-label">Number of Seasons:</label>
-            <input name="year" id="year" min="1600" type="number" required value="<%= game.year %>"/>
+            <input name="year" id="year" min="1600" type="number" required value="<%= watch.year %>"/>
         </div>
         <button class="btn btn-success col-sm-offset-2">Save</button>
     </form>
@@ -48,11 +48,11 @@
 			<form method="post">
 					<div class="form-group">
 							<label for="title" class="col-sm-2 control-label">Title: *</label>
-							<input name="title" id="title" required value="<%= game.title %>"/>
+							<input name="title" id="title" required value="<%= watch.title %>"/>
 					</div>
 					<div class="form-group">
 							<label for="developer" class="col-sm-2 control-label">MPAA film ratings: *</label>
-							<input name="developer" id="developer" required value="<%= game.developer %>" />
+							<input name="developer" id="developer" required value="<%= watch.developer %>" />
 							<select name="guide" id="guide">
 								<option<% if (game.genre == 'G') { %> selected }%>>G</option>
 								<option <% if (game.genre == 'PG') { %> selected }%>>PG</option>
@@ -74,7 +74,7 @@
 					</div>
 					<div class="form-group">
 							<label for="year" class="col-sm-2 control-label">Year of release:</label>
-							<input name="year" id="year" min="1600" type="number" required value="<%= movie.year %>"/>
+							<input name="year" id="year" min="1600" type="number" required value="<%= watch.year %>"/>
 					</div>
 					<button class="btn btn-success col-sm-offset-2">Save</button>
 			</form>

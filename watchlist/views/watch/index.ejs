@@ -15,7 +15,7 @@
 			<th>Actions</th>
 		<% } %>
 	</tr>
-	<% for (var i = 0; i < watch.length; i++) { %>
+	<% for (var i = 0; i < watchs.length; i++) { %>
 		<tr>
 			<td><%= watch[i].title %></td>
 			<td><%= watch[i].rating %></td>
@@ -23,8 +23,8 @@
 			<td><%= watch[i].year %></td>
 			<% if (user) { %>
 				<td>
-					<a  href="/watch/edit<%= watch[i]._id %>"class="btn btn-success">Edit List</a>
-					<a href="/watch/delete/<%= watch[i]._id%>"class="btn btn-warning confirmation">Delete Media</a>
+					<a  href="/watchs/edit<%= watchs[i]._id %>"class="btn btn-success">Edit List</a>
+					<a href="/watchs/delete/<%= watchs[i]._id%>"class="btn btn-warning confirmation">Delete Media</a>
 				</td>
 			<% } %>
 		</tr>
