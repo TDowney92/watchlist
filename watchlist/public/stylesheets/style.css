@@ -10,6 +10,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* navbar css */
+
+nav li {
+	font-family: serif;
+	color: tan;
+	font-size: 2.3rem;
+}
+
+nav li:hover {
+	color: tan;
+}
  /* landing page css */
 h1 {
 	color: tan;

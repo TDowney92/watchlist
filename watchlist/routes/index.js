@@ -41,14 +41,10 @@ router.get('/login', function(req, res, next) {
 /* POST register */
 router.post('/register', function(req, res, next) {
     // use the Account model to create a new user with passport
-    Account.register(new Account({
-        username: req.body.username
-    }), req.body.password, function(err, account) {
+    Account.register(new Account({ username: req.body.username }), req.body.password, function(err, account) {
         if (err) { // failure
             console.log(err);
-            res.redirect('error', {
-                title: 'Create Account Error'
-            });
+            res.redirect('error', { title: 'Create Account Error'});
         }
         res.redirect('/login'); // success
     });
@@ -56,7 +52,7 @@ router.post('/register', function(req, res, next) {
 
 /* POST login */
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/watch',
+    successRedirect: '/watchs',
     failureRedirect: '/login',
     failureMessage: 'Invalid Login'
 }));

@@ -18,15 +18,15 @@ function isLoggedIn(req, res, next) {
 router.get('/', function(req, res, next) {
 
 	// use the modle qurey for the collection for watchlist in mongodb
-	Watch.find(function(err, watch) {
+	Watch.find(function(err, watchs) {
 		if (err) {
 			console.log(err);
 			res.end(err);
 			return;
 		}
 		// load the watch list data
-		res.render('watch/index', {
-			watch: watch,
+		res.render('watchs/index', {
+			watchs: watchs,
 			title: 'The Watch List',
 				user: req.user
 		});
@@ -35,7 +35,7 @@ router.get('/', function(req, res, next) {
 
 //GET watch-add to show the empty form stuff
 router.get('/add', isLoggedIn, function(req, res, next) {
-	res.render('watch/add', {
+	res.render('watchs/add', {
 		title: 'Add a new Show-Movie',
 			user: req.user
 	});
@@ -56,7 +56,7 @@ router.post('/add', isLoggedIn, function(req, res, next) {
 			return;
 		}
 		// no errors = updated watch list
-		res.redirect('/watch');
+		res.redirect('/watchs');
 	});
 });
 
@@ -70,7 +70,7 @@ router.get('/deleted/:_id' isLoggedIn, function(req, res, next) {
 			return;
 		}
 		// no error shows up so watch list gets updated
-		res.redirect('/watch');
+		res.redirect('/watchs');
 	});
 });
 
@@ -83,7 +83,7 @@ router.get('/:id', isLoggedIn, function(req, res, next) {
 			res.render('error');
 			return;
 		}
-		res.render('watch/edit', {
+		res.render('watchs/edit', {
 			watch: watch,
 			title: 'Edit the Watch List'
 				user: req.user
@@ -109,7 +109,7 @@ router.post('/:_id', isLoggedIn, function(req, res, next) {
 			res.render('error');
 			return;
 		}
-		res.redirect('/watch');
+		res.redirect('/watchs');
 	});
 });
 
