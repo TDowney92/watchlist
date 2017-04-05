@@ -75,7 +75,7 @@ router.get('/delete/:_id', isLoggedIn, function(req, res, next) {
 });
 
 // GET watch _id - show edited form
-router.get('/delete/:_id', isLoggedIn, function(req, res, next) {
+router.get('/:_id', isLoggedIn, function(req, res, next) {
 	// look up the selected media
 	Watch.findById(req.params._id, function(err, watch) {
 		if (err) {
@@ -84,7 +84,7 @@ router.get('/delete/:_id', isLoggedIn, function(req, res, next) {
 			return;
 		}
 		res.render('watchs/edit', {
-			watch: watch,
+			watch: watchs,
 			title: 'Edit the Watch List',
 				user: req.user
 		});

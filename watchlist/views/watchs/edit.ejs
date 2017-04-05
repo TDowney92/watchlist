@@ -14,26 +14,26 @@
             <input name="title" id="title" required value="<%= watch.title %>"/>
         </div>
         <div class="form-group">
-            <label for="developer" class="col-sm-2 control-label">TV Parental Guide: *</label>
-            <input name="developer" id="developer" required value="<%= watch.developer %>" />
-						<select name="guide" id="guide">
-							<option<% if (game.genre == 'TV-Y') { %> selected }%>>TV-Y</option>
-							<option <% if (game.genre == 'TV-Y7') { %> selected }%>>TV-Y7</option>
-							<option <% if (game.genre == 'TV-Y7-FV') { %> selected }%>TV-Y7-FV</option>
-							<option <% if (game.genre == 'TV-G') { %> selected }%>TV-G</option>
-							<option <% if (game.genre == 'TV-14') { %> selected }%>TV-14</option>
-							<option <% if (game.genre == 'TV-M') { %> selected }%>TV-M</option>
+            <label for="rating" class="col-sm-2 control-label">TV Parental Guide: *</label>
+            <input name="rating" id="rating" required value="<%= watch.rating %>" />
+						<select name="rating" id="rating">
+							<option<% if (watch.rating == 'TV-Y') { %> selected }%>>TV-Y</option>
+							<option <% if (watch.rating == 'TV-Y7') { %> selected }%>>TV-Y7</option>
+							<option <% if (watch.rating == 'TV-Y7-FV') { %> selected }%>TV-Y7-FV</option>
+							<option <% if (watch.rating == 'TV-G') { %> selected }%>TV-G</option>
+							<option <% if (watch.rating == 'TV-14') { %> selected }%>TV-14</option>
+							<option <% if (watch.rating == 'TV-M') { %> selected }%>TV-M</option>
 						</select>
         </div>
         <div class="form-group">
             <label for="genre" class="col-sm-2 control-label">Genre:</label>
-            <select name="genre" id="genre">
-							<option<% if (game.genre == 'Drama') { %> selected }%>>Daram</option>
-							<option <% if (game.genre == 'Comedy') { %> selected }%>>Comedy</option>
-							<option <% if (game.genre == 'Sci-fi') { %> selected }%>Sci-fi</option>
-							<option <% if (game.genre == 'Western') { %> selected }%>Western</option>
-							<option <% if (game.genre == 'Animation') { %> selected }%>Animation</option>
-							<option <% if (game.genre == 'History') { %> selected }%>History</option>
+            <select name="genre" id="genre" >
+							<option<% if (watch.genre == 'Drama') { %> selected }%>>Daram</option>
+							<option <% if (watch.genre == 'Comedy') { %> selected }%>>Comedy</option>
+							<option <% if (watch.genre == 'Sci-fi') { %> selected }%>Sci-fi</option>
+							<option <% if (watch.genre == 'Western') { %> selected }%>Western</option>
+							<option <% if (watch.genre == 'Animation') { %> selected }%>Animation</option>
+							<option <% if (watch.genre == 'History') { %> selected }%>History</option>
             </select>
         </div>
         <div class="form-group">
@@ -42,43 +42,6 @@
         </div>
         <button class="btn btn-success col-sm-offset-2">Save</button>
     </form>
-		<br>
-		<h4> Movies </h4>
-
-			<form method="post">
-					<div class="form-group">
-							<label for="title" class="col-sm-2 control-label">Title: *</label>
-							<input name="title" id="title" required value="<%= watch.title %>"/>
-					</div>
-					<div class="form-group">
-							<label for="developer" class="col-sm-2 control-label">MPAA film ratings: *</label>
-							<input name="developer" id="developer" required value="<%= watch.developer %>" />
-							<select name="guide" id="guide">
-								<option<% if (game.genre == 'G') { %> selected }%>>G</option>
-								<option <% if (game.genre == 'PG') { %> selected }%>>PG</option>
-								<option <% if (game.genre == 'PG-13') { %> selected }%>PG-13</option>
-								<option <% if (game.genre == 'R') { %> selected }%>R</option>
-								<option <% if (game.genre == 'NC-17') { %> selected }%>NC-17</option>
-							</select>
-					</div>
-					<div class="form-group">
-							<label for="genre" class="col-sm-2 control-label">Genre:</label>
-							<select name="genre" id="genre">
-								<option<% if (game.genre == 'Fantasy') { %> selected }%>>Fantasy</option>
-								<option <% if (game.genre == 'Comedy') { %> selected }%>>Comedy</option>
-								<option <% if (game.genre == 'Sci-fi') { %> selected }%>Sci-fi</option>
-								<option <% if (game.genre == 'Historical') { %> selected }%>Historical</option>
-								<option <% if (game.genre == 'Adventure') { %> selected }%>Adventure</option>
-								<option <% if (game.genre == 'Romance') { %> selected }%>Romance</option>
-							</select>
-					</div>
-					<div class="form-group">
-							<label for="year" class="col-sm-2 control-label">Year of release:</label>
-							<input name="year" id="year" min="1600" type="number" required value="<%= watch.year %>"/>
-					</div>
-					<button class="btn btn-success col-sm-offset-2">Save</button>
-			</form>
-
 </main>
 
 <% include ../partials/footer.ejs %>
