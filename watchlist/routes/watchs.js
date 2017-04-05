@@ -84,7 +84,7 @@ router.get('/:_id', isLoggedIn, function(req, res, next) {
 			return;
 		}
 		res.render('watchs/edit', {
-			watch: watchs,
+			watch: watch,
 			title: 'Edit the Watch List',
 				user: req.user
 		});

@@ -47,6 +47,8 @@ footer {
 	color: tan;
 	position: fixed;
 	font-family: serif;
+	background-color: black;
+	padding: 20px;
 }
 
 /* register css */
